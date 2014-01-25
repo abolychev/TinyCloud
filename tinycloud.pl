@@ -85,7 +85,7 @@ sub checkFile {
 }
 
 # Start the Mojolicious command system
-app->start;
+app->start('daemon', '-l', 'http://*:3000');
 
 __DATA__
  
