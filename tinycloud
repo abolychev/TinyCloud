@@ -3,6 +3,16 @@ use utf8;
 use Modern::Perl;
 use Mojolicious::Lite;
 use Data::Dumper;
+use Getopt::Std;
+
+my %opts = (
+	p	=>	3000,
+);
+
+getopt('p', \%opts);
+say $opts{p};
+
+my $types = Mojolicious::Types->new;
 
 # Increase limit to 1GB
 $ENV{MOJO_MAX_MESSAGE_SIZE} = 10737418240;
@@ -34,6 +44,11 @@ sub listDir {
 	if( -f $path ) {
 		say 'file';
 		$self->render_static($path);
+		my ($ext) = $path =~ /\.(.*?)$/;
+		if( my $type = $types->type(lc $ext) )
+		{
+			$self->res->headers->content_type( $type );
+		}
 	} elsif( -d $path ) 
 	{
   		say __LINE__ . ' dir';
