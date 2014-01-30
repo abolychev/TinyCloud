@@ -20,3 +20,4 @@ apt-get install cpanm
 
 cpanm Mojolicious::Lite
 
+wget https://raw.github.com/abolychev/TinyCloud/master/tinycloud
