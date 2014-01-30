@@ -1,2 +1,2 @@
-TinyCloud
+tinyCloud
 =========
