@@ -9,8 +9,7 @@ TinyCloud
 
 ## Usage
 
-cd foo/bar
-tinycloud
+cd foo/bar; tinycloud
 
 go to http://you_ip:3000
 
