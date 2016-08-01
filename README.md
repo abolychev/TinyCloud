@@ -18,7 +18,9 @@ go to http://you_ip:3000
 apt-get install cpanminus
 
 cpanm Mojolicious::Lite
+
 cpanm Modern::Perl
 
 wget https://raw.github.com/abolychev/TinyCloud/master/tinycloud
+
 chmod +x tinycloud
